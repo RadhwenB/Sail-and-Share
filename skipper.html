@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Sail&Share</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css"> 
+        <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="js/jquery-1.11.3.min.js"></script>   
+        <script src="js/datepicker.min.js"></script>
+        <script src="js/popper.min.js"></script>              
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+
+    <body>
+        <div class="tm-main-content" id="top">
+              
+            <div class="tm-top-bar" id="tm-top-bar">
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar navbar-expand-lg narbar-light">
+                            <a class="navbar-brand mr-auto" href="index.html">
+                                Sail & Share
+                            </a>
+                            <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Find a boat</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="skipper.html">Find a skipper</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="profile()" href="#top">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="charters.html">Charters</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contactUs.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>                            
+                        </nav>
+                    </div> 
+                </div> 
+            </div> 
+
+            <div class="tm-page-wrap mx-auto">
+                <section class="tm-banner" id="hole">
+                    <div class="tm-container-outer tm-banner-bg">
+                        <div class="container">
+
+                            <div class="row tm-banner-row tm-banner-row-header">
+                                <div class="col-xs-12">
+                                    <div class="tm-banner-header">
+                                        <h1 class="text-uppercase tm-banner-title">Sail & Share</h1>
+                                        <p class="tm-banner-subtitle">Your Journey is our priority</p>      
+                                    </div>    
+                                </div>                       
+                            </div> 
+                            <div class="row tm-banner-row" id="tm-section-search">
+
+                                <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                                    <div class="form-row tm-search-form-row">                                
+                                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                                            <label for="inputCity">Select Your Location</label>
+                                            <input  name="destination" type="text" class="form-control" id="inputCity" placeholder="Type your location...">
+                                        </div>
+                                        <div class="form-group tm-form-group tm-form-group-1">                                    
+                                            <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
+                                                <label for="inputrange">Price Range</label>
+                                                <select style="width: auto;" name="room" class="form-control tm-select" id="inputrange">
+                                                    <option value="1" selected>0€ - 15€ / Hour</option>
+                                                    <option value="2">15€ - 30€ / Hour</option>
+                                                    <option value="3">+ 30€ / Hour</option>
+                                                </select>                                        
+                                            </div>
+                                            <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">                                       
+                                                <label for="inputExperience">Experience</label>     
+                                                <select  name="experience" class="form-control tm-select" id="inputExperience">
+                                                    <option value="1" selected>0 years - 2 years</option>
+                                                    <option value="2">2 years - 5 years</option>
+                                                    <option value="3">+ 5 years</option>
+                                                </select>                                        
+                                            </div>
+                                            <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+
+                                                <label for="inputRatio">Ratio</label>                                            
+                                                <select name="ratio" class="form-control tm-select" id="inputRatio">
+                                                    <option value="1" selected>0 stars - 3 starts</option>
+                                                    <option value="2">3 stars - 4 starts</option>
+                                                    <option value="3">+ 4 stars</option>
+                                                </select>                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row tm-search-form-row">
+
+                                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+                                            <label for="inputCheckIn">When?</label>
+                                            <input name="check-in" type="text" class="form-control" id="inputCheckIn" placeholder="Check In">
+                                        </div>
+                                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+                                            <label for="inputCheckOut">&nbsp;</label>
+                                            <input name="check-out" type="text" class="form-control" id="inputCheckOut" placeholder="Check Out">
+                                        </div>
+
+                                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                                            <br>
+                                             <a class="text-uppercase btn-primary tm-btn" onclick="searchSk()" style="text-align: center; display: block; margin-left: auto; margin-right: auto; color: white;" >Search skipper</a> 
+                                        </div>
+                                    </div>        
+
+                                </form> 
+
+
+                            </div> 
+                            <div class="tm-banner-overlay"></div>
+                        </div>                   
+                    </div>                
+                </section>
+
+                <div class="containerContact" id="profileSk" style="display: none;">
+                    <div class="divcol">
+                        <div class="formoCard" id="15" style="display: none;">
+                            <div class="cards-list">
+                            <div class="card 1" id="011" onclick="details011()">
+                              <div class="card_image"> <img alt="picture1" src="https://www.dreamyachtcharter.com/wp-content/uploads/2019/07/img_4903-1-e1563977739155.jpg" /> </div>
+                              <div class="card_title title-white">
+                                <p style="color: white;">12 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Antibes</p>
+                              </div>
+                            </div>
+
+                              <div class="card 2" id="012" onclick="details012()">
+                              <div class="card_image">
+                                <img alt="picture2" src="https://www.sailingeurope.com/blog/wp-content/uploads/2014/05/Skipper-Virtues-400x400.jpg" />
+                                </div>
+                              <div class="card_title title-white">
+                                <p style="color: white;">10 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Nice</p>
+                              </div>
+                            </div>
+
+                            <div class="card 3" id="013" onclick="details013()">
+                              <div class="card_image">
+                                <img alt="picture3" src="https://www.sailingeurope.com/resources/7767/skipper-on-the-boat.jpg" />
+                              </div>
+                              <div class="card_title">
+                                <p style="color: white;">8 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Cannes</p>
+                              </div>
+                            </div>
+                              
+                              <div class="card 4" id="014" onclick="details014()">
+                              <div class="card_image">
+                                <img alt="picture4" src="https://navigare-yachting.com/images/blog/navigare-yachting-sailing-with-skipper.jpg" />
+                                </div>
+                              <div class="card_title title-black">
+                                <p style="color: white;">14 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Nice</p>
+                              </div>
+                              </div>
+
+                              <div class="card 5" id="015" onclick="details015()">
+                              <div class="card_image">
+                                <img alt="picture5" src="https://www.yachtholiday.com/images/blog/yacht-holiday-sailing-blog-skipper.jpg" />
+                              </div>
+                              <div class="card_title">
+                                <p style="color: white;">8 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Antibes</p>
+                              </div>
+                            </div>
+                              
+                              <div class="card 6" id="016" onclick="details016()">
+                              <div class="card_image">
+                                <img alt="picture6" src="https://kavalayachting.com/wp-content/uploads/2019/11/skipper.jpg" />
+                                </div>
+                              <div class="card_title title-black">
+                                <p style="color: white;">12 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Nice</p>
+                              </div>
+                              </div>
+
+                            </div>
+                       </div>
+                       <div class="formoCard" id="30" style="display: none;">
+                            <div class="cards-list">
+                            <div class="card 1" id="021" onclick="details021()">
+                              <div class="card_image"> <img alt="picture7" src="http://www.allatsea.net/wp-content/uploads/2018/07/3-ADB6F0E8-E056-44ED-B9BF-FD76CAFED68C-e1532656322855-600x444.jpg" /> </div>
+                              <div class="card_title title-white">
+                                <p style="color: white;">20 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Antibes</p>
+                              </div>
+                            </div>
+
+                              <div class="card 2" id="022" onclick="details022()">
+                              <div class="card_image">
+                                <img alt="picture8" src="https://navigare-yachting.com/images/blog/navigare-yachting-sailing-with-skipper.jpg" />
+                                </div>
+                              <div class="card_title title-white">
+                                <p style="color: white;">25 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Nice</p>
+                              </div>
+                            </div>
+
+                            <div class="card 3" id="023" onclick="details023()">
+                              <div class="card_image">
+                                <img alt="picture9" src="https://www.dreamyachtcharter.com/wp-content/uploads/2019/07/56947138_1671619432981945_1194885229169344512_n.jpg" />
+                              </div>
+                              <div class="card_title">
+                                <p style="color: white;">22 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Cannes</p>
+                              </div>
+                            </div>
+
+                            </div>
+                       </div>
+                       <div class="formoCard" id="31" style="display: none;">
+                            <div class="cards-list">
+                            <div class="card 1" id="031" onclick="details031()">
+                              <div class="card_image"> <img alt="picture10" src="https://www.superyacht.eu/wp-content/uploads/2019/06/Gilberto-Frola-captain-apertura.jpg" /> </div>
+                              <div class="card_title title-white">
+                                <p style="color: white;">35 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Cannes</p>
+                              </div>
+                            </div>
+
+                            <div class="card 2" id="032" onclick="details032()">
+                              <div class="card_image">
+                                <img alt="picture10" src="https://www.superyacht.eu/wp-content/uploads/2019/06/comandante-Frazzetta-apertura.jpg" />
+                                </div>
+                              <div class="card_title title-white">
+                                <p style="color: white;">40 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Nice</p>
+                              </div>
+                            </div>
+
+                            <div class="card 3" id="033" onclick="details033()">
+                              <div class="card_image">
+                                <img alt="picture12" src="http://capitanmartin.com/images/captain-martin.jpg" />
+                              </div>
+                              <div class="card_title">
+                                <p style="color: white;">70 € / Hour</p>
+                                <p style="color: white; font-size: 15px;">Monaco</p>
+                              </div>
+                            </div>
+
+                            </div>
+                       </div>
+                       <div class="containerContact" id="affSkDetail" style="display: none;">
+                        <div class="formoCard">
+                            <img alt="picture13" id="profileTypeImg" src="img/wheel.png" class="profileImgT" style="margin-bottom: 2%;">
+                            <div style="text-align: center;">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <h4 style="text-align: center; margin-top: 2%;" >Location</h4>
+                            <h6 style="text-align: center; margin-top: 2%;" id="affLocation">&nbsp;</h6>
+                            <h4 style="text-align: center; margin-top: 2%;" >Experience</h4>
+                            <h6 style="text-align: center; margin-top: 2%;" id="affExperience">&nbsp;</h6>
+                            <h4 style="text-align: center; margin-top: 2%;" >Ratio</h4>
+                            <h6 style="text-align: center;" id="affRatio">&nbsp;</h6>
+                            <h4 style="text-align: center; margin-top: 2%;" >Availability</h4>
+                            <h6 style="text-align: center; margin-top: 2%;" id="affWhen">&nbsp;</h6> 
+                            <a class="text-uppercase btn-primary tm-btn" style="text-align: center; display: block; margin-left: auto; margin-right: auto; color: white; margin-top: 2%;" >HIRE</a> 
+                        </div>                   
+                        </div>
+                    </div>                
+                </div>
+
+            </div>
+
+            <script>
+                $(function(){
+
+                    // Date Picker in Search form
+                    var pickerCheckIn = datepicker('#inputCheckIn');
+                    var pickerCheckOut = datepicker('#inputCheckOut');
+
+                });
+            </script>
+
+            <div class="tm-page-wrap mx-auto">
+                
+                <footer class="tm-container-outer">
+                    <p class="mb-0">Radhwen BOUAOUN - Pauline TRONCY - Nélida MIRABET HERRANZ | EURECOM 2020</p>
+                </footer>
+
+            </div>
+        </div>             
+    </body>
+</html>

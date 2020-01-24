@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Sail&Share</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />        
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script src="js/jquery-1.11.3.min.js"></script>    
+        <script src="js/popper.min.js"></script>             
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+    </head>
+
+    <body>
+        <div class="tm-main-content" id="top">
+              
+            <div class="tm-top-bar" id="tm-top-bar">
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar navbar-expand-lg narbar-light">
+                            <a class="navbar-brand mr-auto" href="index.html">
+                                Sail & Share
+                            </a>
+                            <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Find a boat</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="skipper.html">Find a skipper</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" onclick="profile()" href="#top">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="charters.html">Charters</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contactUs.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>                            
+                        </nav>
+                    </div> 
+                </div> 
+            </div> 
+
+            
+            <div class="containerContact" id="profile">
+                <div class="divcol">
+                    <div class="formoCard">
+                        <img id="profileImgId" alt="profilePicture" class="profileImg" src="img/avatar.png">
+                        <h1 id="profileName">&nbsp;</h1>
+                        <div style="text-align: center;">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <h4 style="text-align: center; margin-top: 2%;">Profile Type</h4>
+                        <img id="profileTypeImg" alt="typePicture" src="img/lessee.png" class="profileImgT">
+                        <h6 style="text-align: center;" id="profileType">&nbsp;</h6>
+                        <h6 style="text-align: center; margin-top: 2%;" id="profileLicence">&nbsp;</h6>
+                        <h4 style="text-align: center; margin-top: 2%;">Email Contact</h4>
+                        <h6 style="text-align: center; margin-top: 2%;" id="profileEmail">&nbsp;</h6>
+                        <h4 style="text-align: center; margin-top: 2%;">Phone Number</h4>
+                        <h6 style="text-align: center; margin-top: 2%;" id="profilePhone">&nbsp;</h6>
+                   </div>
+                </div>                
+            </div>
+
+            <script>
+                $(function(){
+                    document.getElementById("profileName").innerHTML = sessionStorage.getItem("firstname") + ' ' + sessionStorage.getItem("lastname");
+                    document.getElementById("profileType").innerHTML = sessionStorage.getItem("profileType");
+                    document.getElementById("profileLicence").innerHTML = sessionStorage.getItem("licence");
+                    document.getElementById("profileEmail").innerHTML = sessionStorage.getItem("email");
+                    document.getElementById("profilePhone").innerHTML = sessionStorage.getItem("nber");
+                    document.getElementById("profileImgId").src = sessionStorage.getItem("image");
+                    if (sessionStorage.getItem("profileType") == "Lessee") {
+                        document.getElementById("profileTypeImg").src = "img/lessee.png"
+                    }else if(sessionStorage.getItem("profileType") == "Skipper"){
+                        document.getElementById("profileTypeImg").src = "img/wheel.png"
+                    }else{
+                        document.getElementById("profileTypeImg").src = "img/anckor.png"
+                    }
+                    
+                });
+            </script>
+            
+
+            <div class="tm-page-wrap mx-auto">
+                
+                <footer class="tm-container-outer">
+                    <p class="mb-0">Radhwen BOUAOUN - Pauline TRONCY - Nélida MIRABET HERRANZ | EURECOM 2020</p>
+                </footer>
+
+            </div>
+        </div>             
+    </body>
+</html>

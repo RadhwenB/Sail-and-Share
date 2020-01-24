@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Sail&Share</title>
+
+        <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css"> 
+
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="js/jquery-1.11.3.min.js"></script> 
+        <script src="js/popper.min.js"></script>                
+        <script src="js/bootstrap.min.js"></script> 
+        <script src="js/index.js"></script>
+    </head>
+
+    <body>
+        <div class="tm-main-content" id="top">
+              
+            <div class="tm-top-bar" id="tm-top-bar">
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar navbar-expand-lg narbar-light">
+                            <a class="navbar-brand mr-auto" href="index.html">
+                                Sail & Share
+                            </a>
+                            <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Find a boat</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="skipper.html">Find a skipper</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" onclick="profile()" href="#top">Profile</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="charters.html">Charters</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="contactUs.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>                            
+                        </nav>
+                    </div> 
+                </div> 
+            </div> 
+
+            <div class="" id="contactForm">
+                <div style="">
+                    <video autoplay muted loop id="myVideo" style="  position: absolute; right: 0;  bottom: 0;  min-width: 100%;   min-height: 100%;">
+                      <source src="https://drive.google.com/uc?export=download&id=166PHY9HAHb5PQvQeorp__o702zn-YVdl" type="video/mp4">
+                    </video>
+                </div>
+                <div class="" style="position: absolute; margin-top: 5rem; margin-bottom: 5rem; width: 60%;left: 50%; margin-left: -30%;">
+                  <h3 class="titl" style="text-align: center;"> Contact Us! </h3>
+                  <div id="formo">                    
+                        <form id="fillon" >
+                            <label for="namo">Name</label>
+                            <input type="text" id="namo" name="name" placeholder="Your name.." required/>
+
+                            <label for="emailo">Email</label>
+                            <input type="text" id="emailo" name="email" placeholder="Your email address.." required/>
+
+                            <label for="subj">Subject</label>
+                            <input type="text" id="subj" name="subject" placeholder="Your Subject.." required/>
+
+                            <label for="msg">Message</label>
+                            <textarea id="msg" name="Message" placeholder="Write something.." style="height:10%" required></textarea>
+
+                            <div style="text-align: center; margin-top: 1%;">
+                                <a class="btn-primary tm-btn" onclick="sendMsg()" style="color: white;">Send</a>
+                                <button class="btn-primary tm-btn" onclick="window.location.href = 'index.html';">Cancel</button>
+                            </div>
+                        </form>
+
+                        <div id="checko" style="display: none;">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+                            <h1 style="color: #7ac142; text-align: center;">Your Message has been sent successfully</h1>
+                        </div>
+                        
+                   </div>                    
+                </div>
+            </div>
+            <div class="" style="position: fixed; width:100%; bottom: 0;">
+                <footer class="tm-container-outer">
+                    <p class="mb-0">Radhwen BOUAOUN - Pauline TRONCY - Nélida MIRABET HERRANZ | EURECOM 2020 </p>
+                </footer>
+            </div>  
+        </div>    
+               
+    </body>
+</html>

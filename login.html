@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Sail&Share</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="img/icon.png" />
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <script src="js/index.js"></script>
+  <script src="js/jquery-1.11.3.min.js"></script>       
+  <script src="js/popper.min.js"></script>          
+  <script src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="tm-top-bar" id="tm-top-bar" style="font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 300; background: rgba(255,255,255,0.95); height: 3.5rem; width: 100%; top: 0; left: 0;">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg narbar-light azaz">
+                    <a class="azaz" style="font-size: 2.2rem; text-transform: uppercase; margin-top: -3px;" href="index.html">
+                        Sail & Share
+                    </a>
+                    <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation" style="border-color: rgb(104, 199, 187); border-radius: 0px;">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Find a boat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="skipper.html">Find a skipper</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="profile()" href="#top">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="charters.html">Charters</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contactUs.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>                            
+                </nav>
+            </div> 
+        </div> 
+    </div>
+
+    <div class="containerContact" id="profile">
+        <div class="divcol">
+            <div class="formoCard">
+               <h1 style="text-align: center;">Registration Form</h1>
+               <div style="text-align: center;">
+                  <div class="inputForm">
+                      <input class="inputo" type="text" placeholder="First Name.." id="firstname" minlength="3">
+                      <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                  </div>
+
+                  <div class="inputForm">
+                    <input class="inputo" type="text" placeholder="Last Name.." id="lastname" minlength="3">
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                  </div>
+
+                  <div class="inputForm" >
+                    <input  class="inputo" type="email" placeholder="Email.." id="email" minlength="3">
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                  </div>
+
+                  <div class="inputForm">
+                    <input class="inputo" type="Number" placeholder="Phone Number.." id="nber">
+                    <i class="fa fa-phone fa-lg fa-fw" aria-hidden="true"></i>
+                  </div>
+
+                  <h4 style="margin-top: 2%; color: #15824B; text-transform: uppercase;">Do You Have a Boat Licence?</h4>
+
+                  <div class="toggle-radio" style="margin-top: 2%;">
+                    <input type="radio" name="rdo" value="Have a Boat Licence" id="yes">
+                    <input type="radio" name="rdo" value="Do Not Have a Boat Licence" id="no">
+                    <div class="switch">
+                      <label for="yes">Yes</label>
+                      <label for="no">No</label>
+                      <span></span>
+                    </div>
+                  </div>
+
+                  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                  <div class="file-upload" style="margin-top: 2%; margin-bottom: 5%;">
+                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+                    <div class="image-upload-wrap">
+                      <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                      <div class="drag-text">
+                        <h3>Drag and drop a file or select add Image</h3>
+                      </div>
+                    </div>
+                    <div class="file-upload-content">
+                      <img class="file-upload-image" src="#" alt="your image" />
+                      <div class="image-title-wrap">
+                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    function readURL(input) {
+                      if (input.files && input.files[0]) {
+
+                        var reader = new FileReader();
+
+                        reader.onload = function(e) {
+                          $('.image-upload-wrap').hide();
+
+                          $('.file-upload-image').attr('src', e.target.result);
+                          window.sessionStorage.setItem("image", e.target.result);
+                          $('.file-upload-content').show();
+
+                          $('.image-title').html(input.files[0].name);
+                        };
+
+                        reader.readAsDataURL(input.files[0]);
+
+                      } else {
+                        removeUpload();
+                      }
+                    }
+
+                    function removeUpload() {
+                      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                      $('.file-upload-content').hide();
+                      $('.image-upload-wrap').show();
+                    }
+                    $('.image-upload-wrap').bind('dragover', function () {
+                        $('.image-upload-wrap').addClass('image-dropping');
+                      });
+                      $('.image-upload-wrap').bind('dragleave', function () {
+                        $('.image-upload-wrap').removeClass('image-dropping');
+                    });
+
+                  </script>
+
+                  <input class="text-uppercase btn-primary tm-btn" style="margin-top: 2%; border-radius: 15px; background-color: #69c6ba;" type="button" value="Login" id="submit" onclick="validate()"/>
+               </div>
+           </div>
+        </div>  
+        <div class="tm-page-wrap mx-auto">
+                <footer class="tm-container-outer">
+                    <p class="mb-0">Radhwen BOUAOUN - Pauline TRONCY - Nélida MIRABET HERRANZ | EURECOM 2020</p>
+                </footer>
+
+            </div>              
+    </div>
+</body>
+</html>
